@@ -1,0 +1,212 @@
+[
+  {
+    "scene_id": 1,
+    "narration": "Large Language Models, or LLMs, are increasingly deployed in economics as powerful predictive tools. They offer a cost-effective way to generate synthetic responses and forecast economic outcomes, embedding vast amounts of information.",
+    "visual_ref": "A professional 2D flat vector of a stylized brain representing an LLM, connected to various data points, minimalist infographic, thick black outlines, Academic Blue accents, white background, 16:9 layout.",
+    "on_screen_text": "LLMs: New Predictive Tools",
+    "audio_file": "assets\\scene_audios\\scene_1.mp3"
+  },
+  {
+    "scene_id": 2,
+    "narration": "However, a clear method to assess the quality and true value of these LLM predictions has been missing. We need a unifying metric to quantify the benefits of substituting LLMs for human data.",
+    "visual_ref": "A professional 2D flat vector of a large question mark above a diverse dataset, minimalist infographic, thick black outlines, Soft Orange accents, white background, 16:9 layout.",
+    "on_screen_text": "How to Assess LLM Quality?",
+    "audio_file": "assets\\scene_audios\\scene_2.mp3"
+  },
+  {
+    "scene_id": 3,
+    "narration": "This paper introduces the 'equivalent sample size' (ESS), a novel measure that quantifies the domain-specific value of LLMs in an interpretable unit: the amount of human data they can effectively substitute for.",
+    "visual_ref": "A professional 2D flat vector of a balance scale with an LLM icon on one side and a stack of data points on the other, minimalist infographic, thick black outlines, Academic Blue and Teal accents, white background, 16:9 layout.",
+    "on_screen_text": "Equivalent Sample Size: Quantifying Value",
+    "audio_file": "assets\\scene_audios\\scene_3.mp3"
+  },
+  {
+    "scene_id": 4,
+    "narration": "ESS is defined as the smallest training sample size required for a conventional machine learning model, trained on that domain-specific data, to match the predictive performance of a fixed, pretrained LLM.",
+    "visual_ref": "A professional 2D flat vector of a line graph showing an increasing error curve for an ML model and a constant error line for an LLM intersecting, minimalist infographic, thick black outlines, Teal and Academic Blue accents, white background, 16:9 layout.",
+    "on_screen_text": "Matching LLM Performance with Data",
+    "audio_file": "assets\\scene_audios\\scene_4.mp3"
+  },
+  {
+    "scene_id": 5,
+    "narration": "Quantifying ESS reveals that LLMs can exhibit substantial heterogeneity. For some prediction tasks, they are excellent data surrogates, while for others, even minimal domain-specific data quickly outperforms them.",
+    "visual_ref": "A professional 2D flat vector showing two horizontal progress tracks. On the top track, an LLM icon (brain) is far ahead of a data block icon. On the bottom track, the data block icon is far ahead of the LLM icon. Minimalist infographic, clean symbols, thick black outlines, Academic Blue and Soft Orange accents, absolute white background, 16:9 layout.",
+    "on_screen_text": "LLM Value Varies by Task",
+    "audio_file": "assets\\scene_audios\\scene_5.mp3"
+  },
+  {
+    "scene_id": 6,
+    "narration": "Beyond introducing this measure, the paper develops a robust method for estimating the ESS and for conducting statistical inference, including constructing confidence intervals through sequential hypothesis testing.",
+    "visual_ref": "A professional 2D flat vector of a magnifying glass focusing on a statistical graph showing a confidence interval, minimalist infographic, thick black outlines, Academic Blue accents, white background, 16:9 layout.",
+    "on_screen_text": "Robust Estimation and Inference",
+    "audio_file": "assets\\scene_audios\\scene_6.mp3"
+  },
+  {
+    "scene_id": 7,
+    "narration": "The method is applied to the Panel Study of Income Dynamics (PSID), a long-running U.S. longitudinal household survey, to evaluate LLM predictions for a suite of economic variables.",
+    "visual_ref": "A professional 2D flat vector of a document icon with a family silhouette and a timeline graphic, minimalist infographic, thick black outlines, Teal accents, white background, 16:9 layout.",
+    "on_screen_text": "Real-World Application: PSID",
+    "audio_file": "assets\\scene_audios\\scene_7.mp3"
+  },
+  {
+    "scene_id": 8,
+    "narration": "Our framework studies general prediction problems: an analyst observes a covariate vector 'X' and aims to predict an outcome 'Y'. The accuracy is measured by an expected loss function.",
+    "visual_ref": "A professional 2D flat vector infographic: A flow from 'X' (Covariates) through a central 'Model' icon to a 'Y' (Outcome). Includes a minimalist Loss Function symbol below. Thick black outlines, Soft Orange accents, white background, 16:9 layout.",
+    "on_screen_text": "Prediction Framework: X → Y",
+    "audio_file": "assets\\scene_audios\\scene_8.mp3"
+  },
+  {
+    "scene_id": 9,
+    "narration": "The LLM-based prediction rule involves describing the problem in natural language to a pretrained LLM, whose response becomes the prediction. We treat this LLM rule as fixed, without domain-specific fine-tuning.",
+    "visual_ref": "A professional 2D flat vector infographic: A text document icon entering a solid 'Fixed LLM' cube, with a prediction icon emerging on the other side. Minimalist, thick black outlines, Academic Blue accents, white background, 16:9 layout.",
+    "on_screen_text": "Fixed LLM: Prompt → Prediction",
+    "audio_file": "assets\\scene_audios\\scene_9.mp3"
+  },
+  {
+    "scene_id": 10,
+    "narration": "An example prompt might describe an individual's demographic and work history, then ask the LLM to predict their homeownership status, clearly specifying output formats for interpretation.",
+    "visual_ref": "A professional 2D flat vector infographic: A person's data attributes being formatted into a 'Persona Prompt' template. Minimalist, clean symbols, thick black outlines, Academic Blue and Soft Orange accents, white background, 16:9 layout.",
+    "on_screen_text": "Transforming Data into Personas",
+    "audio_file": "assets\\scene_audios\\scene_10.mp3"
+  },
+  {
+    "scene_id": 11,
+    "narration": "We compare the LLM's error to a 'domain-specific learning' approach, where a machine learning algorithm is trained on increasing amounts of observed (X, Y) data to produce prediction rules.",
+    "visual_ref": "A professional 2D flat vector of a machine learning model icon with gears processing incoming data, minimalist infographic, thick black outlines, Teal accents, white background, 16:9 layout.",
+    "on_screen_text": "Traditional ML Benchmarking",
+    "audio_file": "assets\\scene_audios\\scene_11.mp3"
+  },
+  {
+    "scene_id": 12,
+    "narration": "Figure 1 illustrates the equivalent sample size, N*, as the point where the error curve of the domain-specific algorithm drops below the constant error level of the LLM prediction rule.",
+    "visual_ref": "A professional 2D flat vector of a graph showing a decreasing error curve for an algorithm intersecting a flat line representing LLM error, minimalist infographic, thick black outlines, Soft Orange accents, white background, 16:9 layout.",
+    "on_screen_text": "Defining N*: The Crossover Point",
+    "audio_file": "assets\\scene_audios\\scene_12.mp3"
+  },
+  {
+    "scene_id": 13,
+    "narration": "To estimate the LLM's benchmark error, e_LLM, we calculate its empirical performance on the full dataset by querying the LLM for each observation and averaging the resulting losses.",
+    "visual_ref": "A professional 2D flat vector infographic: A stack of data observations being processed into a single 'e_LLM' average value using a summation (Σ) symbol. Minimalist, thick black outlines, Academic Blue accents, white background, 16:9 layout.",
+    "on_screen_text": "e_LLM = Average(Losses)",
+    "audio_file": "assets\\scene_audios\\scene_13.mp3"
+  },
+  {
+    "scene_id": 14,
+    "narration": "The algorithm's error curve is estimated using a block-out cross-validation procedure, where data is split into disjoint training and test blocks to evaluate out-of-sample performance.",
+    "visual_ref": "image_p12_0.png",
+    "on_screen_text": "Block-Out Cross-Validation",
+    "audio_file": "assets\\scene_audios\\scene_14.mp3"
+  },
+  {
+    "scene_id": 15,
+    "narration": "Finally, a sequential hypothesis-testing procedure compares the algorithm and LLM performance across an ordered sequence of training sizes, providing a reliable one-sided confidence interval for N*.",
+    "visual_ref": "A professional 2D flat vector of a series of bar charts showing increasing performance levels, with an arrow indicating a threshold, minimalist infographic, thick black outlines, Academic Blue accents, white background, 16:9 layout.",
+    "on_screen_text": "Sequential Hypothesis Testing",
+    "audio_file": "assets\\scene_audios\\scene_15.mp3"
+  },
+  {
+    "scene_id": 1,
+    "narration": "We establish the asymptotic properties of the estimated variance, ensuring its convergence and demonstrating that the studentized statistic follows a standard normal distribution under specific conditions. This forms the foundational theoretical basis for our subsequent hypothesis tests.",
+    "visual_ref": "A professional 2D flat vector infographic: A transition from random data points to a smooth, symmetrical bell curve (Normal Distribution). Minimalist, thick black outlines, Academic Blue accents, white background, 16:9 layout.",
+    "on_screen_text": "Convergence to Normal Distribution",
+    "audio_file": "assets\\scene_audios\\scene_16.mp3"
+  },
+  {
+    "scene_id": 2,
+    "narration": "To construct a valid hypothesis test comparing the estimated risks of machine learning models and Large Language Models, we introduce a loss difference function. This approach accounts for correlations between models when computed on the same dataset, crucial for fixed-N asymptotic analysis.",
+    "visual_ref": "A professional 2D flat vector infographic: A mathematical subtraction between an LLM icon and an ML icon, leading to a statistical distribution curve. Minimalist, thick black outlines, Academic Blue and Soft Orange accents, white background, 16:9 layout.",
+    "on_screen_text": "Risk Difference: LLM vs. ML",
+    "audio_file": "assets\\scene_audios\\scene_17.mp3"
+  },
+  {
+    "scene_id": 3,
+    "narration": "Our Proposition 4.1 establishes the validity of the studentized test statistic, Tdiff,Nk,n. Under stated assumptions and the null hypothesis boundary, this statistic asymptotically converges to a standard normal distribution, confirming the one-sided test's asymptotic size.",
+    "visual_ref": "A professional 2D flat vector of a bell curve representing normal distribution with a test statistic, minimalist infographic, thick black outlines, Academic Blue accents, white background, 16:9 layout.",
+    "on_screen_text": "Validating Test Statistics",
+    "audio_file": "assets\\scene_audios\\scene_18.mp3"
+  },
+  {
+    "scene_id": 4,
+    "narration": "As a practical alternative to exact difference variance, a conservative approach sums individual variances. This often overestimates the true variance due to positive correlation between model errors, leading to a smaller test statistic and a more conservative test.",
+    "visual_ref": "A professional 2D flat vector infographic: A comparison between a small 'Actual Variance' bar and a larger 'Conservative Estimate' bar with a shield icon. Minimalist, thick black outlines, Soft Orange accents, white background, 16:9 layout.",
+    "on_screen_text": "Conservative Estimation: Safety First",
+    "audio_file": "assets\\scene_audios\\scene_19.mp3"
+  },
+  {
+    "scene_id": 5,
+    "narration": "We apply our framework to the Panel Study of Income Dynamics (PSID), a longitudinal household survey. We evaluate LLM prediction for four outcomes: hourly wage, homeownership, smoking, and drinking, utilizing detailed respondent characteristics as covariates.",
+    "visual_ref": "A professional 2D flat vector of a chart showing different demographic categories, minimalist infographic, thick black outlines, Teal accents, white background, 16:9 layout.",
+    "on_screen_text": "PSID Dataset and Outcomes",
+    "audio_file": "assets\\scene_audios\\scene_20.mp3"
+  },
+  {
+    "scene_id": 6,
+    "narration": "For continuous outcomes like hourly wage, we employ squared-error loss and report RMSE. For discrete outcomes such as homeownership, drinking, and smoking, we use 0-1 loss, which translates to the misclassification rate.",
+    "visual_ref": "A professional 2D flat vector infographic: A split screen showing a ruler/coins for 'Continuous RMSE' and Checkmark/X icons for 'Discrete 0-1 Loss'. Minimalist, thick black outlines, Teal accents, white background, 16:9 layout.",
+    "on_screen_text": "Measuring Success: RMSE vs. 0-1 Loss",
+    "audio_file": "assets\\scene_audios\\scene_21.mp3"
+  },
+  {
+    "scene_id": 7,
+    "narration": "LLM predictions are generated by transforming covariate vectors into natural language persona descriptions. Critically, we do not fine-tune the LLM on PSID data, and implement safeguards against data leakage by using static models and post-cutoff PSID releases.",
+    "visual_ref": "A professional 2D flat vector of a person profile and a language model icon, minimalist infographic, thick black outlines, Academic Blue accents, white background, 16:9 layout.",
+    "on_screen_text": "LLM Prediction Methodology",
+    "audio_file": "assets\\scene_audios\\scene_22.mp3"
+  },
+  {
+    "scene_id": 8,
+    "narration": "For domain-specific learning, we benchmark LLM performance against two popular supervised Machine Learning algorithms: Lasso regression, a regularized linear method, and Random Forests, a flexible ensemble method for capturing complex relationships.",
+    "visual_ref": "A professional 2D flat vector infographic: A split panel showing a straight line with a lasso rope (Lasso) vs. a branching network of trees (Random Forest). Minimalist, thick black outlines, Academic Blue accents, white background, 16:9 layout.",
+    "on_screen_text": "Lasso vs. Random Forest",
+    "audio_file": "assets\\scene_audios\\scene_23.mp3"
+  },
+  {
+    "scene_id": 9,
+    "narration": "We compute error curves for each ML model, showing test error as a function of training sample size. Hyperparameters are tuned via k-fold cross-validation for every sample size, with results presented through estimated error curves and confidence intervals.",
+    "visual_ref": "A professional 2D flat vector of a line graph depicting error curves with a magnifying glass, minimalist infographic, thick black outlines, Soft Orange accents, white background, 16:9 layout.",
+    "on_screen_text": "Error Curve Estimation",
+    "audio_file": "assets\\scene_audios\\scene_24.mp3"
+  },
+  {
+    "scene_id": 10,
+    "narration": "Our findings from Table 1 reveal substantial heterogeneity in LLM predictive performance across tasks. The equivalent sample size (ESS) of LLMs varies widely, underscoring the task-specific nature of their utility in empirical social science.",
+    "visual_ref": "A professional 2D flat vector of a bar chart comparing equivalent sample sizes across tasks, minimalist infographic, thick black outlines, Teal accents, white background, 16:9 layout.",
+    "on_screen_text": "Task-Specific LLM Performance",
+    "audio_file": "assets\\scene_audios\\scene_25.mp3"
+  },
+  {
+    "scene_id": 11,
+    "narration": "The LLM demonstrates strong performance for homeownership prediction, achieving an equivalent sample size of at least 590 observations. Its performance for predicting drinking behavior is meaningful, with an ESS of at least 41 observations.",
+    "visual_ref": "A professional 2D flat vector of a graph showing high and moderate equivalent sample sizes, minimalist infographic, thick black outlines, Teal accents, white background, 16:9 layout.",
+    "on_screen_text": "Strong & Meaningful ESS",
+    "audio_file": "assets\\scene_audios\\scene_26.mp3"
+  },
+  {
+    "scene_id": 12,
+    "narration": "LLM performance deteriorates for hourly wages, with an equivalent sample size of only 17-20 observations. For smoking behavior, the LLM provides essentially no predictive value, illustrating the extremes of its task-specific capabilities.",
+    "visual_ref": "A professional 2D flat vector of a 'Random Forest' concept. Multiple identical small geometric decision tree diagrams aligned in a grid, merging their paths into one single bold arrow. Minimalist infographic style, thick black outlines, Teal and Academic Blue colors, absolute white background, 16:9 layout.",
+    "on_screen_text": "Weak & No Predictive Value",
+    "audio_file": "assets\\scene_audios\\scene_27.mp3"
+  },
+  {
+    "scene_id": 13,
+    "narration": "Figure 3 illustrates the Root Mean Squared Error (RMSE) for hourly wage prediction across varying training sample sizes. The graph details how model performance changes with increased data, benchmarked against the LLM's error.",
+    "visual_ref": "image_p28_0.png",
+    "on_screen_text": "Hourly Wage Prediction RMSE",
+    "audio_file": "assets\\scene_audios\\scene_28.mp3"
+  },
+  {
+    "scene_id": 14,
+    "narration": "Figure 4 presents the misclassification rate for homeownership prediction as a function of training sample size. This visual shows the error curve for domain-specific models, highlighting where LLM performance aligns with traditional ML.",
+    "visual_ref": "image_p28_1.png",
+    "on_screen_text": "Homeownership Misclassification",
+    "audio_file": "assets\\scene_audios\\scene_29.mp3"
+  },
+  {
+    "scene_id": 15,
+    "narration": "Figures 5 and 6 display the misclassification rates for drinking and smoking behaviors respectively. These graphs provide detailed error curves across different training sizes, further emphasizing the variability of LLM's predictive utility in diverse contexts.",
+    "visual_ref": "image_p29_0.png",
+    "on_screen_text": "Drinking and Smoking Misclassification",
+    "audio_file": "assets\\scene_audios\\scene_30.mp3"
+  }
+]

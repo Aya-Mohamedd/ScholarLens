@@ -1,0 +1,619 @@
+1
+00:00:00,000 --> 00:00:03,181
+Large Language Models, or LLMs, are increasingly
+
+2
+00:00:03,181 --> 00:00:06,097
+deployed in economics as powerful predictive
+
+3
+00:00:06,097 --> 00:00:09,411
+tools. They offer a cost-effective way to generate
+
+4
+00:00:09,411 --> 00:00:12,128
+synthetic responses and forecast economic
+
+5
+00:00:12,128 --> 00:00:15,310
+outcomes, embedding vast amounts of information.
+
+6
+00:00:15,310 --> 00:00:18,620
+However, a clear method to assess the quality and
+
+7
+00:00:18,620 --> 00:00:21,592
+true value of these LLM predictions has been
+
+8
+00:00:21,592 --> 00:00:24,970
+missing. We need a unifying metric to quantify the
+
+9
+00:00:24,970 --> 00:00:28,010
+benefits of substituting LLMs for human data.
+
+10
+00:00:28,009 --> 00:00:31,351
+This paper introduces the 'equivalent sample size'
+
+11
+00:00:31,351 --> 00:00:34,692
+(ESS), a novel measure that quantifies the domain-
+
+12
+00:00:34,692 --> 00:00:37,900
+specific value of LLMs in an interpretable unit:
+
+13
+00:00:37,900 --> 00:00:40,907
+the amount of human data they can effectively
+
+14
+00:00:40,907 --> 00:00:41,909
+substitute for.
+
+15
+00:00:41,909 --> 00:00:44,816
+ESS is defined as the smallest training sample
+
+16
+00:00:44,816 --> 00:00:47,912
+size required for a conventional machine learning
+
+17
+00:00:47,912 --> 00:00:50,882
+model, trained on that domain-specific data, to
+
+18
+00:00:50,882 --> 00:00:53,662
+match the predictive performance of a fixed,
+
+19
+00:00:53,662 --> 00:00:54,609
+pretrained LLM.
+
+20
+00:00:54,609 --> 00:00:57,611
+Quantifying ESS reveals that LLMs can exhibit
+
+21
+00:00:57,611 --> 00:01:00,679
+substantial heterogeneity. For some prediction
+
+22
+00:01:00,679 --> 00:01:03,881
+tasks, they are excellent data surrogates, while
+
+23
+00:01:03,881 --> 00:01:06,882
+for others, even minimal domain-specific data
+
+24
+00:01:06,882 --> 00:01:08,550
+quickly outperforms them.
+
+25
+00:01:08,549 --> 00:01:11,068
+Beyond introducing this measure, the paper
+
+26
+00:01:11,068 --> 00:01:13,885
+develops a robust method for estimating the ESS
+
+27
+00:01:13,885 --> 00:01:16,343
+and for conducting statistical inference,
+
+28
+00:01:16,343 --> 00:01:18,921
+including constructing confidence intervals
+
+29
+00:01:18,921 --> 00:01:21,200
+through sequential hypothesis testing.
+
+30
+00:01:21,200 --> 00:01:24,671
+The method is applied to the Panel Study of Income
+
+31
+00:01:24,671 --> 00:01:28,074
+Dynamics (PSID), a long-running U.S. longitudinal
+
+32
+00:01:28,074 --> 00:01:31,476
+household survey, to evaluate LLM predictions for
+
+33
+00:01:31,476 --> 00:01:33,560
+a suite of economic variables.
+
+34
+00:01:33,560 --> 00:01:36,880
+Our framework studies general prediction problems:
+
+35
+00:01:36,880 --> 00:01:39,935
+an analyst observes a covariate vector 'X' and
+
+36
+00:01:39,935 --> 00:01:43,056
+aims to predict an outcome 'Y'. The accuracy is
+
+37
+00:01:43,056 --> 00:01:45,579
+measured by an expected loss function.
+
+38
+00:01:45,579 --> 00:01:48,854
+The LLM-based prediction rule involves describing
+
+39
+00:01:48,854 --> 00:01:51,995
+the problem in natural language to a pretrained
+
+40
+00:01:51,995 --> 00:01:55,069
+LLM, whose response becomes the prediction. We
+
+41
+00:01:55,069 --> 00:01:58,076
+treat this LLM rule as fixed, without domain-
+
+42
+00:01:58,076 --> 00:01:59,480
+specific fine-tuning.
+
+43
+00:01:59,480 --> 00:02:02,481
+An example prompt might describe an individual's
+
+44
+00:02:02,481 --> 00:02:05,546
+demographic and work history, then ask the LLM to
+
+45
+00:02:05,546 --> 00:02:08,235
+predict their homeownership status, clearly
+
+46
+00:02:08,235 --> 00:02:11,050
+specifying output formats for interpretation.
+
+47
+00:02:11,050 --> 00:02:14,053
+We compare the LLM's error to a 'domain-specific
+
+48
+00:02:14,053 --> 00:02:16,807
+learning' approach, where a machine learning
+
+49
+00:02:16,807 --> 00:02:19,623
+algorithm is trained on increasing amounts of
+
+50
+00:02:19,623 --> 00:02:22,689
+observed (X, Y) data to produce prediction rules.
+
+51
+00:02:22,689 --> 00:02:25,841
+Figure 1 illustrates the equivalent sample size,
+
+52
+00:02:25,841 --> 00:02:28,796
+N*, as the point where the error curve of the
+
+53
+00:02:28,796 --> 00:02:32,079
+domain-specific algorithm drops below the constant
+
+54
+00:02:32,079 --> 00:02:34,639
+error level of the LLM prediction rule.
+
+55
+00:02:34,639 --> 00:02:38,032
+To estimate the LLM's benchmark error, e_LLM, we
+
+56
+00:02:38,032 --> 00:02:41,354
+calculate its empirical performance on the full
+
+57
+00:02:41,354 --> 00:02:44,746
+dataset by querying the LLM for each observation
+
+58
+00:02:44,746 --> 00:02:47,219
+and averaging the resulting losses.
+
+59
+00:02:47,219 --> 00:02:50,153
+The algorithm's error curve is estimated using a
+
+60
+00:02:50,153 --> 00:02:53,086
+block-out cross-validation procedure, where data
+
+61
+00:02:53,086 --> 00:02:56,141
+is split into disjoint training and test blocks to
+
+62
+00:02:56,141 --> 00:02:58,280
+evaluate out-of-sample performance.
+
+63
+00:02:58,280 --> 00:03:01,615
+Finally, a sequential hypothesis-testing procedure
+
+64
+00:03:01,615 --> 00:03:04,885
+compares the algorithm and LLM performance across
+
+65
+00:03:04,885 --> 00:03:08,220
+an ordered sequence of training sizes, providing a
+
+66
+00:03:08,220 --> 00:03:11,289
+reliable one-sided confidence interval for N*.
+
+67
+00:03:11,289 --> 00:03:14,120
+We establish the asymptotic properties of the
+
+68
+00:03:14,120 --> 00:03:17,140
+estimated variance, ensuring its convergence and
+
+69
+00:03:17,140 --> 00:03:19,908
+demonstrating that the studentized statistic
+
+70
+00:03:19,908 --> 00:03:22,676
+follows a standard normal distribution under
+
+71
+00:03:22,676 --> 00:03:25,695
+specific conditions. This forms the foundational
+
+72
+00:03:25,695 --> 00:03:28,652
+theoretical basis for our subsequent hypothesis
+
+73
+00:03:28,652 --> 00:03:29,029
+tests.
+
+74
+00:03:29,030 --> 00:03:32,075
+To construct a valid hypothesis test comparing the
+
+75
+00:03:32,075 --> 00:03:34,877
+estimated risks of machine learning models and
+
+76
+00:03:34,877 --> 00:03:37,435
+Large Language Models, we introduce a loss
+
+77
+00:03:37,435 --> 00:03:40,298
+difference function. This approach accounts for
+
+78
+00:03:40,298 --> 00:03:43,221
+correlations between models when computed on the
+
+79
+00:03:43,221 --> 00:03:45,901
+same dataset, crucial for fixed-N asymptotic
+
+80
+00:03:45,901 --> 00:03:46,450
+analysis.
+
+81
+00:03:46,449 --> 00:03:49,753
+Our Proposition 4.1 establishes the validity of
+
+82
+00:03:49,753 --> 00:03:53,198
+the studentized test statistic, Tdiff,Nk,n. Under
+
+83
+00:03:53,198 --> 00:03:56,151
+stated assumptions and the null hypothesis
+
+84
+00:03:56,151 --> 00:03:59,595
+boundary, this statistic asymptotically converges
+
+85
+00:03:59,595 --> 00:04:03,040
+to a standard normal distribution, confirming the
+
+86
+00:04:03,040 --> 00:04:05,359
+one-sided test's asymptotic size.
+
+87
+00:04:05,359 --> 00:04:08,232
+As a practical alternative to exact difference
+
+88
+00:04:08,232 --> 00:04:11,292
+variance, a conservative approach sums individual
+
+89
+00:04:11,292 --> 00:04:14,040
+variances. This often overestimates the true
+
+90
+00:04:14,040 --> 00:04:17,163
+variance due to positive correlation between model
+
+91
+00:04:17,163 --> 00:04:20,223
+errors, leading to a smaller test statistic and a
+
+92
+00:04:20,223 --> 00:04:21,659
+more conservative test.
+
+93
+00:04:21,659 --> 00:04:24,811
+We apply our framework to the Panel Study of
+
+94
+00:04:24,811 --> 00:04:28,248
+Income Dynamics (PSID), a longitudinal household
+
+95
+00:04:28,248 --> 00:04:31,327
+survey. We evaluate LLM prediction for four
+
+96
+00:04:31,327 --> 00:04:34,908
+outcomes: hourly wage, homeownership, smoking, and
+
+97
+00:04:34,908 --> 00:04:37,701
+drinking, utilizing detailed respondent
+
+98
+00:04:37,701 --> 00:04:39,849
+characteristics as covariates.
+
+99
+00:04:39,849 --> 00:04:42,909
+For continuous outcomes like hourly wage, we
+
+100
+00:04:42,909 --> 00:04:46,108
+employ squared-error loss and report RMSE. For
+
+101
+00:04:46,108 --> 00:04:49,585
+discrete outcomes such as homeownership, drinking,
+
+102
+00:04:49,585 --> 00:04:52,992
+and smoking, we use 0-1 loss, which translates to
+
+103
+00:04:52,992 --> 00:04:54,869
+the misclassification rate.
+
+104
+00:04:54,869 --> 00:04:57,904
+LLM predictions are generated by transforming
+
+105
+00:04:57,904 --> 00:05:01,073
+covariate vectors into natural language persona
+
+106
+00:05:01,073 --> 00:05:04,377
+descriptions. Critically, we do not fine-tune the
+
+107
+00:05:04,377 --> 00:05:07,749
+LLM on PSID data, and implement safeguards against
+
+108
+00:05:07,749 --> 00:05:10,783
+data leakage by using static models and post-
+
+109
+00:05:10,783 --> 00:05:12,199
+cutoff PSID releases.
+
+110
+00:05:12,199 --> 00:05:15,212
+For domain-specific learning, we benchmark LLM
+
+111
+00:05:15,212 --> 00:05:18,487
+performance against two popular supervised Machine
+
+112
+00:05:18,487 --> 00:05:21,106
+Learning algorithms: Lasso regression, a
+
+113
+00:05:21,106 --> 00:05:24,250
+regularized linear method, and Random Forests, a
+
+114
+00:05:24,250 --> 00:05:27,263
+flexible ensemble method for capturing complex
+
+115
+00:05:27,263 --> 00:05:28,179
+relationships.
+
+116
+00:05:28,179 --> 00:05:31,395
+We compute error curves for each ML model, showing
+
+117
+00:05:31,395 --> 00:05:34,546
+test error as a function of training sample size.
+
+118
+00:05:34,546 --> 00:05:37,311
+Hyperparameters are tuned via k-fold cross-
+
+119
+00:05:37,311 --> 00:05:40,269
+validation for every sample size, with results
+
+120
+00:05:40,269 --> 00:05:43,099
+presented through estimated error curves and
+
+121
+00:05:43,099 --> 00:05:44,449
+confidence intervals.
+
+122
+00:05:44,449 --> 00:05:47,680
+Our findings from Table 1 reveal substantial
+
+123
+00:05:47,680 --> 00:05:51,351
+heterogeneity in LLM predictive performance across
+
+124
+00:05:51,351 --> 00:05:54,801
+tasks. The equivalent sample size (ESS) of LLMs
+
+125
+00:05:54,801 --> 00:05:58,105
+varies widely, underscoring the task-specific
+
+126
+00:05:58,105 --> 00:06:01,262
+nature of their utility in empirical social
+
+127
+00:06:01,262 --> 00:06:01,849
+science.
+
+128
+00:06:01,849 --> 00:06:04,792
+The LLM demonstrates strong performance for
+
+129
+00:06:04,792 --> 00:06:08,145
+homeownership prediction, achieving an equivalent
+
+130
+00:06:08,145 --> 00:06:11,224
+sample size of at least 590 observations. Its
+
+131
+00:06:11,224 --> 00:06:14,440
+performance for predicting drinking behavior is
+
+132
+00:06:14,440 --> 00:06:17,040
+meaningful, with an ESS of at least 41
+
+133
+00:06:17,040 --> 00:06:17,929
+observations.
+
+134
+00:06:17,929 --> 00:06:21,284
+LLM performance deteriorates for hourly wages,
+
+135
+00:06:21,284 --> 00:06:24,492
+with an equivalent sample size of only 17-20
+
+136
+00:06:24,492 --> 00:06:27,628
+observations. For smoking behavior, the LLM
+
+137
+00:06:27,628 --> 00:06:30,617
+provides essentially no predictive value,
+
+138
+00:06:30,617 --> 00:06:33,972
+illustrating the extremes of its task-specific
+
+139
+00:06:33,972 --> 00:06:34,919
+capabilities.
+
+140
+00:06:34,919 --> 00:06:38,184
+Figure 3 illustrates the Root Mean Squared Error
+
+141
+00:06:38,184 --> 00:06:41,449
+(RMSE) for hourly wage prediction across varying
+
+142
+00:06:41,449 --> 00:06:44,850
+training sample sizes. The graph details how model
+
+143
+00:06:44,850 --> 00:06:47,571
+performance changes with increased data,
+
+144
+00:06:47,571 --> 00:06:50,019
+benchmarked against the LLM's error.
+
+145
+00:06:50,019 --> 00:06:52,972
+Figure 4 presents the misclassification rate for
+
+146
+00:06:52,972 --> 00:06:56,047
+homeownership prediction as a function of training
+
+147
+00:06:56,047 --> 00:06:59,122
+sample size. This visual shows the error curve for
+
+148
+00:06:59,122 --> 00:07:01,951
+domain-specific models, highlighting where LLM
+
+149
+00:07:01,951 --> 00:07:04,349
+performance aligns with traditional ML.
+
+150
+00:07:04,349 --> 00:07:07,273
+Figures 5 and 6 display the misclassification
+
+151
+00:07:07,273 --> 00:07:09,871
+rates for drinking and smoking behaviors
+
+152
+00:07:09,871 --> 00:07:13,054
+respectively. These graphs provide detailed error
+
+153
+00:07:13,054 --> 00:07:16,107
+curves across different training sizes, further
+
+154
+00:07:16,107 --> 00:07:19,161
+emphasizing the variability of LLM's predictive
+
+155
+00:07:19,161 --> 00:07:20,979
+utility in diverse contexts.

@@ -1,0 +1,13 @@
+streamlit
+google-generativeai
+python-dotenv
+llama-index
+llama-index-readers-file
+pymupdf
+Pillow
+edge-tts
+mutagen
+moviepy==1.0.3
+requests
+imageio==2.25.1
+imageio-ffmpeg
