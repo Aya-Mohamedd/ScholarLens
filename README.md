@@ -21,7 +21,7 @@ An automated pipeline designed to transform academic PDF research papers into en
 
 | Component | Technology |
 | --- | --- |
-| **Language Model** | Gemini 3 Flash (Scripting & Analysis) |
+| **Language Model** | Gemini 2.5 Flash (Scripting & Analysis) |
 | **Image Generation** | SDXL-Turbo (Stability AI) |
 | **PDF Processing** | PyMuPDF (fitz) |
 | **Audio/Video** | gTTS / FFmpeg |
